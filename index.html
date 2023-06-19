@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix animation</title>
+  </head>
+  <body>
+    <div class="logo">
+      <div class="h-col" id="a-1"></div>
+      <div class="s-col" id="a-2"></div>
+      <div class="h-col" id="a-3"></div>
+      <div class="sir"></div>
+    </div>
+  </body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+
+
+
+
+
+    /* .logo {
+      position: relative;
+      height: 450px;
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+    } */
+    /* .h-col {
+      height: 100%;
+      width: 35%;
+      background: #a2221d;
+    }
+    .s-col {
+      height: 100%;
+      width: 35%;
+      background: #d22f27;
+      transform: skewX(20deg);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    } */
+    .sir {
+      position: absolute;
+      bottom: -10px;
+      height: 20px;
+      width: 100%;
+      border-radius: 100% 100% 0 0;
+      background: black;
+    }
+
+    #a-1 {
+      animation: from-bottom 400ms ease-in forwards;
+    }
+    #a-3 {
+      opacity: 0;
+      animation: from-top 700ms ease-in forwards;
+      animation-delay: 400ms;
+    }
+
+    #a-2 {
+      animation: swuized-from-top 300ms ease-in forwards;
+      animation-delay: 300ms;
+      opacity: 0;
+    }
+
+    @keyframes opacity {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes swuized-from-top {
+      from {
+        transform: skewX(20deg) translateY(-100%);
+      }
+      to {
+        transform: skewX(20deg) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes from-bottom {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes from-top {
+      from {
+        opacity: 1;
+        transform: translateY(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</html>
